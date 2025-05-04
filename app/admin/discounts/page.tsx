@@ -12,7 +12,7 @@ type Discount = {
   code: string
   discounttype: string
   amount?: number | null
-  expiry_date: string | null
+  expiry_date: string | null | undefined
   is_active?: boolean | null
 }
 
@@ -82,7 +82,7 @@ export default function AdminDiscounts() {
         code: formData.code.trim(),
         discounttype: formData.discounttype,
         amount: formData.amount,
-        expiry_date: formData.expiry_date || null,
+        expiry_date: formData.expiry_date ?? undefined,
         is_active: formData.is_active,
       })
 
